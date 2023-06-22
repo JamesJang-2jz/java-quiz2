@@ -13,15 +13,15 @@ public class IntegerArrayUtilities {
         Integer[] result = new Integer[Math.abs(stop-start) + 1];
         for (int i = 0; i < result.length; i++) {
             result[i] = start + i;
-        } 
+        }
         return result;
     }
 
     public Integer getSumOfFirstTwo(Integer[] array) {
-        return null;
+        return array[0] + array[1];
     }
 
     public Integer getProductOfFirstTwo(Integer[] array) {
-        return null;
+        return array[array.length - 2] * array[array.length-1];
     }
 }

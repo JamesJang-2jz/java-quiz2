@@ -15,12 +15,17 @@ public class ArrayUtility {
     }
 
     public Integer[] rotate(Integer[] array, Integer index) {
-        int last = array[0];
-        for (int i = 0; i < array.length - 2; i++) {
-            array[i] = array[i + 1];
+        index = index % array.length;
+        if (index < 0){
+            index = array.length + index;
         }
-        array[array.length - 1] = last;
-        return array;
+        Integer[] result = Arrays.copyOf(array, array.length);
+        for (int i = 0; i < index; i++) {
+            Integer first = result[0];
+            System.arraycopy(result, 1, result, 0, result.length-1);
+            result[result.length-1] = first;
+        }
+        return result;
     }
 
     public Integer countOccurrence(Integer[] array1, Integer[] array2, Integer valueToEvaluate) {

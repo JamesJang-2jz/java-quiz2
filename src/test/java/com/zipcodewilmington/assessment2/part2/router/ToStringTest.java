@@ -3,6 +3,8 @@ package com.zipcodewilmington.assessment2.part2.router;
 import com.zipcodewilmington.assessment2.part2.Router;
 import org.junit.Assert;
 import org.junit.Test;
+import com.zipcodewilmington.assessment2.part2.router.Pair;
+
 
 public class ToStringTest {
     @Test
@@ -48,16 +50,10 @@ public class ToStringTest {
             router.add(path, controller);
             expectedString.append(path).append(controller).append('\n');
         }
-
-
         // when
         String actualString = router.toString();
-
-
         // then
         Assert.assertEquals(expectedString.toString(), actualString);
-
     }
-
 
 }
